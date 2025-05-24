@@ -1,10 +1,11 @@
 package org.example.persona.asPerson;
 
-import org.example.persona.person_interface.I_Person;
 
 import java.time.LocalDate;
 
+import org.example.persona.person_interface.I_Person;
 import org.example.event.asEvent.EventUnique;
+
 
 public class Person implements I_Person {
     public String asName;

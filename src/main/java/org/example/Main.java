@@ -8,8 +8,6 @@ import org.example.data.cached.data_cache.Data_Read_Write;
 import org.example.persona.asPerson.Person;
 import org.example.event.asEvent.EventUnique;
 
-import javax.lang.model.type.NullType;
-
 import static java.lang.System.in;
 
 
@@ -270,7 +268,7 @@ class CommandLineReader {
                 _target_event.participants_by_CPF.put(_final_user_CPF, _target_person);
                 _target_person.asRegisteredEvent = _target_event;
                 
-                System.out.println("\n" + _target_person.asName + " registered.");
+                System.out.println("\n" + _target_person.asName + " registered at " + _target_event.asName);
 
                 main_state = State.initialmenu;
                 break;
