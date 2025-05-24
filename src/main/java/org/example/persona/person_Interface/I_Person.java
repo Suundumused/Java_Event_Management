@@ -1,7 +1,6 @@
 package org.example.persona.person_interface;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public interface I_Person
 {

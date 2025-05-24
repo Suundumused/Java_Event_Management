@@ -3,13 +3,12 @@ package org.example.persona.asPerson;
 import org.example.persona.person_interface.I_Person;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Arrays;
+
+import org.example.event.asEvent.EventUnique;
 
 public class Person implements I_Person {
     public String asName;
-    public String asRegisteredEventName;
+    public EventUnique asRegisteredEvent;
 
     public LocalDate asDateAge = null;
 
@@ -26,7 +25,6 @@ public class Person implements I_Person {
         for (int i =0; i < cpf_piece_a.length; i++){
             asCPF[i] = getNumber(cpf_piece_a[i]);
         }
-
         asCPF[3] = cpf_piece_b;
     }
 
@@ -48,18 +46,30 @@ public class Person implements I_Person {
     private static Integer getNumber(String _value) {
         try {
             return Integer.parseInt(_value);
-        } catch (Exception ex) {
+
+        } catch (Exception _)
+        {
             throw new IllegalArgumentException("Check that all digits between the delimiters are numbers.");
         }
     }
 
     @Override
     public String returnCPF () {
-        return "";
+        return asCPF[0] + "." +
+                asCPF[1] + "." +
+                asCPF[2] + "-" +
+                asCPF[3];
     }
 
     @Override
     public void parserDateAge (String _value){
+        try{
+            asDateAge = LocalDate.parse(_value);
+
+        }catch (Exception _)
+        {
+            throw new IllegalArgumentException("Invalid date format. Must be in yyyy-MM-dd format.");
+        }
 
     }
 

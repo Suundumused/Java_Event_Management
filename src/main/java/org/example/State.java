@@ -10,6 +10,8 @@ public enum State {
     listeventsbycategory,
     listeventsbytag,
 
+    attach_user_to_event,
+
     listcommands,
 
     exit,
